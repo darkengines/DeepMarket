@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{96484F57-8C3B-4ABA-817D-914E0C0C3C47}</ProjectGuid>
-    <RootNamespace>DeepMarket</RootNamespace>
+    <ProjectGuid>{8F0978BB-31ED-4BFB-AA54-615110F8AF08}</ProjectGuid>
+    <RootNamespace>Converter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,7 +84,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,14 +117,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CurrencyPair.hpp" />
-    <ClInclude Include="Market.hpp" />
-    <ClInclude Include="price_info.h" />
+    <ClCompile Include="Converter.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CurrencyPair.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Market.cpp" />
+    <ClInclude Include="Converter.h" />
+    <ClInclude Include="read_file_result.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeepMarket\DeepMarket.vcxproj">
+      <Project>{96484f57-8c3b-4aba-817d-914e0c0c3c47}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

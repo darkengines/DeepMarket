@@ -1,0 +1,19 @@
+{
+  "name": "getdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "http-proxy-agent": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^1.7.3",
+    "promise-parallel-throttle": "^3.1.0",
+    "socks-proxy-agent": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
