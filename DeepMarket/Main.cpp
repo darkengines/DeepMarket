@@ -1,6 +1,6 @@
 #include <iostream>
-#include "CurrencyPair.hpp"
 #include "Market.hpp"
+#include "ShortPosition.h"
 
 int main(int argc, char** argv) {
 
@@ -15,12 +15,24 @@ int main(int argc, char** argv) {
 	time.wMilliseconds = 500;
 
 	int counter = 0;
+	auto first = true;
+	DeepMarket::ShortPosition* position;
 
-	auto marketConnection = market->connect([&](const DeepMarket::price_info& priceInfo)->void {
+	auto marketConnection = market->connect([&](const DeepMarket::CurrencyPairTrack* currencyPair)->void {
 		if (counter % 10000 == 0) {
 			auto sout = market->toString();
 			auto out = sout.c_str();
 			system("cls");
+			if (first) {
+				if (currencyPair->currencyPair().toString() == "EURUSD") {
+					auto ask = currencyPair->current().ask;
+					position = new DeepMarket::ShortPosition(currencyPair, ask, 100000);
+					first = false;
+				}
+			} else {
+				auto p = position->baseProfit();
+				printf("%f\n", p);
+			}
 			auto marketTime = market->time();
 			FileTimeToSystemTime(&marketTime, &time);
 			printf(

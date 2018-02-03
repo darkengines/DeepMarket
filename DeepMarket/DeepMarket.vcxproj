@@ -117,14 +117,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Account.hpp" />
+    <ClInclude Include="Currency.hpp" />
     <ClInclude Include="CurrencyPair.hpp" />
+    <ClInclude Include="CurrencyPairTrack.hpp" />
+    <ClInclude Include="ExchangeRate.hpp" />
+    <ClInclude Include="LongPosition.h" />
     <ClInclude Include="Market.hpp" />
+    <ClInclude Include="Position.hpp" />
     <ClInclude Include="price_info.h" />
+    <ClInclude Include="ShortPosition.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Currency.cpp" />
     <ClCompile Include="CurrencyPair.cpp" />
+    <ClCompile Include="CurrencyPairTrack.cpp" />
+    <ClCompile Include="ExchangeRate.cpp" />
+    <ClCompile Include="LongPosition.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Market.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="ShortPosition.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
